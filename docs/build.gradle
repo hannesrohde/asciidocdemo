@@ -21,6 +21,7 @@ asciidoctor.doLast {
 asciidoctor {
     requires = ['asciidoctor-diagram']
     sourceDir = file('src/asciidoc')
+    outputDir = file('/')
     attributes \
         'source-highlighter' : 'coderay',
         'imagesDir' : 'images',
