@@ -10,7 +10,11 @@ buildscript {
 
 apply plugin: 'org.asciidoctor.convert'
 
+// clean up generated diagram images before and after running build
 asciidoctor.doFirst {
+    delete fileTree("src/asciidoc/images") { include 'diag-*.png' }
+}
+asciidoctor.doLast {
     delete fileTree("src/asciidoc/images") { include 'diag-*.png' }
 }
 
@@ -19,7 +23,8 @@ asciidoctor {
     sourceDir = file('src/asciidoc')
     attributes \
         'source-highlighter' : 'coderay',
-            'toc': 'left',
-            'icons': 'font',
-            'idseparator': '-'
+        'imagesDir' : 'images',
+        'toc': 'left',
+        'icons': 'font',
+        'idseparator': '-'
 }
