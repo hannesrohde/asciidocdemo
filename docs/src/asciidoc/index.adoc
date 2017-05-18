@@ -42,10 +42,11 @@ digraph assistant {
     // Edges
     google_assistant -> api_ai [label="Dialog input"];
     api_ai -> google_assistant [label="Dialog output"];
-    amazon_alexa -> api_ai [label="Dialog input"];
-    api_ai -> amazon_alexa [label="Dialog output"];
+    amazon_alexa -> dw_api [label="Content query"];
+    dw_api -> amazon_alexa [label="Headline data"];
     api_ai -> dw_api [label="Content query"];
-    dw_api -> api_ai [label="Headline data"]
+    dw_api -> api_ai [label="Headline data"];
+    api_ai -> amazon_alexa [style="dotted"];
 }
 ---------------------------------------------------------------------
 
