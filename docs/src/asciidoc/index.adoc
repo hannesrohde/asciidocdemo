@@ -1,28 +1,175 @@
-The Article Title
-=================
-Author's Name <authors@email.address>
-v1.0, 2017-04
+AsciiDoc introduction
+=====================
+:Author: Hannes Rohde
+:Email:  hannes.rohde@mailbox.org
 
-This is the optional preamble (an untitled section body). Useful for
-writing simple sectionless documents consisting only of a preamble.
-
-NOTE: The abstract, preface, appendix, bibliography, glossary and
-index section titles are significant ('specialsections').
+A short overview over the capabilities of the AsciiDoc markup language and benefits of using it for software documentation.
 
 :numbered!:
-[abstract]
-Example Abstract
-----------------
-The optional abstract (one or more paragraphs) goes here.
+== Formatting
 
-This document is an AsciiDoc article skeleton containing briefly
-annotated element placeholders plus a couple of example index entries
-and footnotes.
+Text formatting in AsciiDoc works similar to markdown (JIRA, github) or wikitext (wikipedia):
 
-Diagram examples
-----------------
+=== Headers
 
-Diagrams can be created in GraphViz:
+There are 6 levels of headers:
+
+= Header level 1
+== Header level 2
+=== Header level 3
+==== Header level 4
+===== Header level 5
+====== Header level 6
+
+=== Text formatting
+
+normal, _italic_, *bold*, +mono+. +
+``double quoted'', `single quoted'. +
+normal, ^super^, ~sub~.
+
+(C) (R) (TM) -- ... -> <- => <= &#182;
+
+''''
+
+=== Paragraphs
+
+.normal linewrapped paragraph
+Vogon poetry is, of course, the third worst in the universe. The second worst is that of
+the Azgoths of Kria. During a recitation by their poet master Grunthos the Flatulent of
+his poem "Ode to a Small Lump of Green Putty I Found in My Armpit One Midsummer Morning",
+four of the audience members died of internal hemorrhaging and the president of the Mid-
+Galactic Arts Nobbling Council survived only by gnawing one of his own legs off.
+
+.literal paragraph
+ Oh freddled gruntbuggly,
+ Thy micturations are to me,
+ As plurdled gabbleblotchits,
+ On a lurgid bee,
+ That mordiously hath blurted out,
+ Its earted jurtles,
+ Into a rancid festering confectious organ squealer.
+
+=== Lists
+
+.Bullet list
+* first
+** first a
+* second
+  - second a
+  - second b
+
+.Ordered list
+. first
+. second
+.. sub
+.. another sub
+
+.Forced ordered list
+a. first
+  1. sub
+  1. sub
+a. second
+
+.Labeled list / definition list
+Greenery:: Pantone 15-0343 (#88B04B)
+Serenity:: Pantone 15-3913 (#92A8D1)
+Rose Quartz:: Pantone 13-1520 (#F7CAC9)
+
+=== Special annotations TIP, IMPORTANT, WARNING, CAUTION, NOTE
+
+TIP: Always commit and push code before going on a vacation!
+
+=== Icons
+Place http://fontawesome.io/icons/[Font Awesome] icons inline icon:thumbs-o-up[] in the text.
+
+=== Tables
+
+.Simple example table
+[options="header"]
+|=======================
+|Col 1|Col 2      |Col 3
+|1    |Item 1     |a
+|2    |Item 2     |b
+|3    |Item 3     |c
+|6    |Three items|d
+|=======================
+
+.CSV data, styling
+[format="csv",width="60%",cols="4"]
+[frame="topbot",grid="none"]
+|===
+id,type,user,date
+123456,b,256,2017-06-21
+123457,b,6411,2017-06-20
+|===
+
+=== Blocks
+
+.Listing block for plain text
+----
+GNU GENERAL PUBLIC LICENSE
+
+Version 3, 29 June 2007
+
+Copyright © 2007 Free Software Foundation, Inc. <http://fsf.org/>
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+Preamble
+
+The GNU General Public License is a free, copyleft license for software and other kinds of works.
+----
+
+.Source code with syntax highlighting
+[source,java]
+protected void reloadData() {
+    if (mOnFragmentReloadedListener != null) {
+	    mOnFragmentReloadedListener.onFragmentReloaded();
+    }
+}
+
+.Sidebar block
+****
+AsciiDoc was first released in Nov 2002 by Stuart Rackham. It was designed from the start to be a shorthand syntax for producing professional documents like DocBook and LaTeX.
+****
+
+.Quote block
+[quote, Hanlon's razor, https://en.wikipedia.org/wiki/Hanlon's_razor]
+____
+Never attribute to malice that which can be adequately explained by stupidity.
+____
+
+.More
+NOTE/TIP/CAUTION/... block, example block, literal block, passthrough block
+
+[[links]]
+=== Links
+You can place <<link,links to anchors>> in the same document.
+
+Relative link:another_document[links to other documents] and links to http://www.github.com/hannesrohde/asciidocdemo[internet resources] are also possible.
+
+=== Images
+
+Images can be embedded in full size, as thumbnails or inline:
+
+image::images/nyancat.gif[]
+
+== Advanced features
+
+=== Includes
+
+Create modular documents by including common blocks
+
+=== Attributes
+.Predefined attributes
+The author of this text is {author} <{email}>.
+
+.Define attributes on the fly
+:color: green
+My favorite color is {color}.
+
+== Diagrams
+
+Diagrams can be created in http://www.graphviz.org/[GraphViz]:
 
 [graphviz]
 ---------------------------------------------------------------------
@@ -50,7 +197,7 @@ digraph assistant {
 }
 ---------------------------------------------------------------------
 
-or ditaa:
+or http://ditaa.sourceforge.net/[ditaa]:
 
 [ditaa]
 ....
@@ -62,7 +209,7 @@ or ditaa:
                        | ditaa in        |
                        |                 v
  +--------+   +--------+----+    /---------------\
- |        |-->+ Asciidoctor +--> |               |
+ |        |-->+ Asciidoctor +--> |           cBLU|
  |  Text  |   +-------------+    |   Beautiful   |
  |Document|<--|   !magic!   |    |    Output     |
  |     {d}|   |             |    |               |
@@ -72,135 +219,23 @@ or ditaa:
      +-----------------------------------+
 ....
 
-or PlantUML:
-
+or http://plantuml.com/[PlantUML]:
 [plantuml]
 ....
-class BlockProcessor
-class DiagramBlock
-class DitaaBlock
-class PlantUmlBlock
+@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
 
-BlockProcessor <|-- DiagramBlock
-DiagramBlock <|-- DitaaBlock
-DiagramBlock <|-- PlantUmlBlock
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
 ....
-
-And there's more:
-
-:numbered:
-
-The First Section
------------------
-Article sections start at level 1 and can be nested up to four levels
-deep.
-footnote:[An example footnote.]
-indexterm:[Example index entry]
-
-And now for something completely different: ((monkeys)), lions and
-tigers (Bengal and Siberian) using the alternative syntax index
-entries.
-(((Big cats,Lions)))
-(((Big cats,Tigers,Bengal Tiger)))
-(((Big cats,Tigers,Siberian Tiger)))
-Note that multi-entry terms generate separate index entries.
-
-Here are a couple of image examples: an image:tiger.png[]
-example inline image followed by an example block image:
-
-.Tiger block image
-image::tiger.png[Tiger image]
-
-Followed by an example table:
-
-.An example table
-[width="60%",options="header"]
-|==============================================
-| Option          | Description
-| -a 'USER GROUP' | Add 'USER' to 'GROUP'.
-| -R 'GROUP'      | Disables access to 'GROUP'.
-|==============================================
-
-.An example example
-===============================================
-Lorum ipum...
-===============================================
-
-[[X1]]
-Sub-section with Anchor
-~~~~~~~~~~~~~~~~~~~~~~~
-Sub-section at level 2.
-
-A Nested Sub-section
-^^^^^^^^^^^^^^^^^^^^
-Sub-section at level 3.
-
-Yet another nested Sub-section
-++++++++++++++++++++++++++++++
-Sub-section at level 4.
-
-This is the maximum sub-section depth supported by the distributed
-AsciiDoc configuration.
-footnote:[A second example footnote.]
-
-
-The Second Section
-------------------
-Article sections are at level 1 and can contain sub-sections nested up
-to four deep.
-
-An example link to anchor at start of the <<X1,first sub-section>>.
-indexterm:[Second example index entry]
-
-An example link to a bibliography entry <<taoup>>.
-
-
-:numbered!:
-
-[appendix]
-Example Appendix
-----------------
-AsciiDoc article appendices are just just article sections with
-'specialsection' titles.
-
-Appendix Sub-section
-~~~~~~~~~~~~~~~~~~~~
-Appendix sub-section at level 2.
-
-
-[bibliography]
-Example Bibliography
---------------------
-The bibliography list is a style of AsciiDoc bulleted list.
-
-[bibliography]
-- [[[taoup]]] Eric Steven Raymond. 'The Art of Unix
-  Programming'. Addison-Wesley. ISBN 0-13-142901-9.
-- [[[walsh-muellner]]] Norman Walsh & Leonard Muellner.
-  'DocBook - The Definitive Guide'. O'Reilly & Associates. 1999.
-  ISBN 1-56592-580-7.
-
-
-[glossary]
-Example Glossary
-----------------
-Glossaries are optional. Glossaries entries are an example of a style
-of AsciiDoc labeled lists.
-
-[glossary]
-A glossary term::
-  The corresponding (indented) definition.
-
-A second glossary term::
-  The corresponding (indented) definition.
-
-
-ifdef::backend-docbook[]
-[index]
-Example Index
--------------
-////////////////////////////////////////////////////////////////
-The index is normally left completely empty, it's contents being
-generated automatically by the DocBook toolchain.
-////////////////////////////////////////////////////////////////
-endif::backend-docbook[]
+== Links
+AsciiDoc Writer’s Guide::
+    http://asciidoctor.org/docs/asciidoc-writers-guide/
+AsciiDoc cheat sheet::
+    https://powerman.name/doc/asciidoc
+Live javascript interpreter::
+	https://asciidoclive.com/
+This presentation::
+	https://github.com/hannesrohde/asciidocdemo
