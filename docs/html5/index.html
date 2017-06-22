@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
-<meta name="author" content="Author's Name">
-<title>The Article Title</title>
+<meta name="author" content="Hannes Rohde">
+<title>AsciiDoc introduction</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -513,31 +513,45 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>The Article Title</h1>
+<h1>AsciiDoc introduction</h1>
 <div class="details">
-<span id="author" class="author">Author's Name</span><br>
-<span id="email" class="email">authors@email.address</span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">2017-04</span>
+<span id="author" class="author">Hannes Rohde</span><br>
+<span id="email" class="email"><a href="mailto:hannes.rohde@mailbox.org">hannes.rohde@mailbox.org</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_example-abstract">Example Abstract</a></li>
-<li><a href="#_diagram-examples">Diagram examples</a></li>
-<li><a href="#_the-first-section">1. The First Section</a>
+<li><a href="#_formatting">Formatting</a>
 <ul class="sectlevel2">
-<li><a href="#X1">1.1. Sub-section with Anchor</a></li>
+<li><a href="#_headers">Headers</a></li>
 </ul>
 </li>
-<li><a href="#_the-second-section">2. The Second Section</a></li>
-<li><a href="#_example-appendix">Appendix A: Example Appendix</a>
+<li><a href="#_header-level-1">Header level 1</a>
+<ul class="sectlevel1">
+<li><a href="#_header-level-2">Header level 2</a>
 <ul class="sectlevel2">
-<li><a href="#_appendix-sub-section">Appendix Sub-section</a></li>
+<li><a href="#_header-level-3">Header level 3</a></li>
+<li><a href="#_text-formatting">Text formatting</a></li>
+<li><a href="#_paragraphs">Paragraphs</a></li>
+<li><a href="#_lists">Lists</a></li>
+<li><a href="#_special-annotations-tip-important-warning-caution-note">Special annotations TIP, IMPORTANT, WARNING, CAUTION, NOTE</a></li>
+<li><a href="#_icons">Icons</a></li>
+<li><a href="#_tables">Tables</a></li>
+<li><a href="#_blocks">Blocks</a></li>
+<li><a href="#links">Links</a></li>
+<li><a href="#_images">Images</a></li>
 </ul>
 </li>
-<li><a href="#_example-bibliography">Example Bibliography</a></li>
-<li><a href="#_example-glossary">Example Glossary</a></li>
+<li><a href="#_advanced-features">Advanced features</a>
+<ul class="sectlevel2">
+<li><a href="#_includes">Includes</a></li>
+<li><a href="#_attributes">Attributes</a></li>
+</ul>
+</li>
+<li><a href="#_diagrams">Diagrams</a></li>
+<li><a href="#_links">Links</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -545,42 +559,357 @@ table.CodeRay td.code>pre{padding:0}
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is the optional preamble (an untitled section body). Useful for
-writing simple sectionless documents consisting only of a preamble.</p>
+<p>A short overview over the capabilities of the AsciiDoc markup language and benefits of using it for software documentation.</p>
 </div>
-<div class="admonitionblock note">
+</div>
+</div>
+<div class="sect1">
+<h2 id="_formatting">Formatting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Text formatting in AsciiDoc works similar to markdown (JIRA, github) or wikitext (wikipedia):</p>
+</div>
+<div class="sect2">
+<h3 id="_headers">Headers</h3>
+<div class="paragraph">
+<p>There are 6 levels of headers:</p>
+</div>
+</div>
+</div>
+</div>
+<h1 id="_header-level-1" class="sect0">Header level 1</h1>
+<div class="sect1">
+<h2 id="_header-level-2">Header level 2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_header-level-3">Header level 3</h3>
+<div class="sect3">
+<h4 id="_header-level-4">Header level 4</h4>
+<div class="sect4">
+<h5 id="_header-level-5">Header level 5</h5>
+<div class="sect5">
+<h6 id="_header-level-6">Header level 6</h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_text-formatting">Text formatting</h3>
+<div class="paragraph">
+<p>normal, <em>italic</em>, <strong>bold</strong>, <code>mono</code>.<br>
+&#8220;double quoted&#8221;, &#8216;single quoted&#8217;.<br>
+normal, <sup>super</sup>, <sub>sub</sub>.</p>
+</div>
+<div class="paragraph">
+<p>&#169; &#174; &#8482;&#8201;&#8212;&#8201;&#8230;&#8203; &#8594; &#8592; &#8658; &#8656; &#182;</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_paragraphs">Paragraphs</h3>
+<div class="paragraph">
+<div class="title">normal linewrapped paragraph</div>
+<p>Vogon poetry is, of course, the third worst in the universe. The second worst is that of
+the Azgoths of Kria. During a recitation by their poet master Grunthos the Flatulent of
+his poem "Ode to a Small Lump of Green Putty I Found in My Armpit One Midsummer Morning",
+four of the audience members died of internal hemorrhaging and the president of the Mid-
+Galactic Arts Nobbling Council survived only by gnawing one of his own legs off.</p>
+</div>
+<div class="literalblock">
+<div class="title">literal paragraph</div>
+<div class="content">
+<pre>Oh freddled gruntbuggly,
+Thy micturations are to me,
+As plurdled gabbleblotchits,
+On a lurgid bee,
+That mordiously hath blurted out,
+Its earted jurtles,
+Into a rancid festering confectious organ squealer.</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lists">Lists</h3>
+<div class="ulist">
+<div class="title">Bullet list</div>
+<ul>
+<li>
+<p>first</p>
+<div class="ulist">
+<ul>
+<li>
+<p>first a</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>second</p>
+<div class="ulist">
+<ul>
+<li>
+<p>second a</p>
+</li>
+<li>
+<p>second b</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Ordered list</div>
+<ol class="arabic">
+<li>
+<p>first</p>
+</li>
+<li>
+<p>second</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>sub</p>
+</li>
+<li>
+<p>another sub</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<div class="title">Forced ordered list</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>first</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>sub</p>
+</li>
+<li>
+<p>sub</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>second</p>
+</li>
+</ol>
+</div>
+<div class="dlist">
+<div class="title">Labeled list / definition list</div>
+<dl>
+<dt class="hdlist1">Greenery</dt>
+<dd>
+<p>Pantone 15-0343 (#88B04B)</p>
+</dd>
+<dt class="hdlist1">Serenity</dt>
+<dd>
+<p>Pantone 15-3913 (#92A8D1)</p>
+</dd>
+<dt class="hdlist1">Rose Quartz</dt>
+<dd>
+<p>Pantone 13-1520 (#F7CAC9)</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_special-annotations-tip-important-warning-caution-note">Special annotations TIP, IMPORTANT, WARNING, CAUTION, NOTE</h3>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The abstract, preface, appendix, bibliography, glossary and
-index section titles are significant (<em>specialsections</em>).
+Always commit and push code before going on a vacation!
 </td>
 </tr>
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_icons">Icons</h3>
+<div class="paragraph">
+<p>Place <a href="http://fontawesome.io/icons/">Font Awesome</a> icons inline <span class="icon"><i class="fa fa-thumbs-o-up"></i></span> in the text.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tables">Tables</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Simple example table</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Col 1</th>
+<th class="tableblock halign-left valign-top">Col 2</th>
+<th class="tableblock halign-left valign-top">Col 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Three items</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-topbot grid-none" style="width: 60%;">
+<caption class="title">Table 2. CSV data, styling</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">123456</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2017-06-21</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">123457</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6411</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2017-06-20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_blocks">Blocks</h3>
+<div class="listingblock">
+<div class="title">Listing block for plain text</div>
+<div class="content">
+<pre>GNU GENERAL PUBLIC LICENSE
+
+Version 3, 29 June 2007
+
+Copyright © 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+Preamble
+
+The GNU General Public License is a free, copyleft license for software and other kinds of works.</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Source code with syntax highlighting</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">protected</span> <span class="type">void</span> reloadData() {
+    <span class="keyword">if</span> (mOnFragmentReloadedListener != <span class="predefined-constant">null</span>) {
+            mOnFragmentReloadedListener.onFragmentReloaded();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Sidebar block</div>
+<div class="paragraph">
+<p>AsciiDoc was first released in Nov 2002 by Stuart Rackham. It was designed from the start to be a shorthand syntax for producing professional documents like DocBook and LaTeX.</p>
+</div>
+</div>
+</div>
+<div class="quoteblock">
+<div class="title">Quote block</div>
+<blockquote>
+<div class="paragraph">
+<p>Never attribute to malice that which can be adequately explained by stupidity.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Hanlon's razor<br>
+<cite>https://en.wikipedia.org/wiki/Hanlon's_razor</cite>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">More</div>
+<p>NOTE/TIP/CAUTION/&#8230;&#8203; block, example block, literal block, passthrough block</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="links">Links</h3>
+<div class="paragraph">
+<p>You can place <a href="#link">links to anchors</a> in the same document.</p>
+</div>
+<div class="paragraph">
+<p>Relative <a href="another_document">links to other documents</a> and links to <a href="http://www.github.com/hannesrohde/asciidocdemo">internet resources</a> are also possible.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_images">Images</h3>
+<div class="paragraph">
+<p>Images can be embedded in full size, as thumbnails or inline:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/images/nyancat.gif" alt="nyancat">
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="_example-abstract">Example Abstract</h2>
+<h2 id="_advanced-features">Advanced features</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_includes">Includes</h3>
 <div class="paragraph">
-<p>The optional abstract (one or more paragraphs) goes here.</p>
+<p>Create modular documents by including common blocks</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attributes">Attributes</h3>
+<div class="paragraph">
+<div class="title">Predefined attributes</div>
+<p>The author of this text is Hannes Rohde &lt;<a href="mailto:hannes.rohde@mailbox.org">hannes.rohde@mailbox.org</a>&gt;.</p>
 </div>
 <div class="paragraph">
-<p>This document is an AsciiDoc article skeleton containing briefly
-annotated element placeholders plus a couple of example index entries
-and footnotes.</p>
+<div class="title">Define attributes on the fly</div>
+<p>My favorite color is green.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_diagram-examples">Diagram examples</h2>
+<h2 id="_diagrams">Diagrams</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Diagrams can be created in GraphViz:</p>
+<p>Diagrams can be created in <a href="http://www.graphviz.org/">GraphViz</a>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -588,200 +917,52 @@ and footnotes.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>or ditaa:</p>
+<p>or <a href="http://ditaa.sourceforge.net/">ditaa</a>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/diag-05d39a63a2b8d6df83edad87df2be8f1.png" alt="diag 05d39a63a2b8d6df83edad87df2be8f1" width="540" height="280">
+<img src="images/diag-410e42cf2bf45d246e4b2998bdd1c791.png" alt="diag 410e42cf2bf45d246e4b2998bdd1c791" width="540" height="280">
 </div>
 </div>
 <div class="paragraph">
-<p>or PlantUML:</p>
+<p>or <a href="http://plantuml.com/">PlantUML</a>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/diag-bef13084c1ece75181773e5673c902cd.png" alt="diag bef13084c1ece75181773e5673c902cd" width="256" height="283">
-</div>
-</div>
-<div class="paragraph">
-<p>And there&#8217;s more:</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the-first-section">1. The First Section</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Article sections start at level 1 and can be nested up to four levels
-deep.
-<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>
-</p>
-</div>
-<div class="paragraph">
-<p>And now for something completely different: monkeys, lions and
-tigers (Bengal and Siberian) using the alternative syntax index
-entries.
-
-
-
-Note that multi-entry terms generate separate index entries.</p>
-</div>
-<div class="paragraph">
-<p>Here are a couple of image examples: an <span class="image"><img src="images/tiger.png" alt="tiger"></span>
-example inline image followed by an example block image:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/tiger.png" alt="Tiger image">
-</div>
-<div class="title">Figure 1. Tiger block image</div>
-</div>
-<div class="paragraph">
-<p>Followed by an example table:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 60%;">
-<caption class="title">Table 1. An example table</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-a <em>USER GROUP</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add <em>USER</em> to <em>GROUP</em>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-R <em>GROUP</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Disables access to <em>GROUP</em>.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="exampleblock">
-<div class="title">Example 1. An example example</div>
-<div class="content">
-<div class="paragraph">
-<p>Lorum ipum&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="X1">1.1. Sub-section with Anchor</h3>
-<div class="paragraph">
-<p>Sub-section at level 2.</p>
-</div>
-<div class="sect3">
-<h4 id="_a-nested-sub-section">1.1.1. A Nested Sub-section</h4>
-<div class="paragraph">
-<p>Sub-section at level 3.</p>
-</div>
-<div class="sect4">
-<h5 id="_yet-another-nested-sub-section">Yet another nested Sub-section</h5>
-<div class="paragraph">
-<p>Sub-section at level 4.</p>
-</div>
-<div class="paragraph">
-<p>This is the maximum sub-section depth supported by the distributed
-AsciiDoc configuration.
-<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p>
-</div>
-</div>
+<img src="images/diag-51b0c2caca7cc1def8a4cbb334bc230e.png" alt="diag 51b0c2caca7cc1def8a4cbb334bc230e" width="274" height="222">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_the-second-section">2. The Second Section</h2>
+<h2 id="_links">Links</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Article sections are at level 1 and can contain sub-sections nested up
-to four deep.</p>
-</div>
-<div class="paragraph">
-<p>An example link to anchor at start of the <a href="#X1">first sub-section</a>.
-</p>
-</div>
-<div class="paragraph">
-<p>An example link to a bibliography entry <a href="#taoup">[taoup]</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example-appendix">Appendix A: Example Appendix</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>AsciiDoc article appendices are just just article sections with
-<em>specialsection</em> titles.</p>
-</div>
-<div class="sect2">
-<h3 id="_appendix-sub-section">Appendix Sub-section</h3>
-<div class="paragraph">
-<p>Appendix sub-section at level 2.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example-bibliography">Example Bibliography</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The bibliography list is a style of AsciiDoc bulleted list.</p>
-</div>
-<div class="ulist bibliography">
-<ul class="bibliography">
-<li>
-<p><a id="taoup"></a>[taoup] Eric Steven Raymond. <em>The Art of Unix
-Programming</em>. Addison-Wesley. ISBN 0-13-142901-9.</p>
-</li>
-<li>
-<p><a id="walsh-muellner"></a>[walsh-muellner] Norman Walsh &amp; Leonard Muellner.
-<em>DocBook - The Definitive Guide</em>. O&#8217;Reilly &amp; Associates. 1999.
-ISBN 1-56592-580-7.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example-glossary">Example Glossary</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Glossaries are optional. Glossaries entries are an example of a style
-of AsciiDoc labeled lists.</p>
-</div>
-<div class="dlist glossary">
+<div class="dlist">
 <dl>
-<dt>A glossary term</dt>
+<dt class="hdlist1">AsciiDoc Writer’s Guide</dt>
 <dd>
-<p>The corresponding (indented) definition.</p>
+<p><a href="http://asciidoctor.org/docs/asciidoc-writers-guide/" class="bare">http://asciidoctor.org/docs/asciidoc-writers-guide/</a></p>
 </dd>
-<dt>A second glossary term</dt>
+<dt class="hdlist1">AsciiDoc cheat sheet</dt>
 <dd>
-<p>The corresponding (indented) definition.</p>
+<p><a href="https://powerman.name/doc/asciidoc" class="bare">https://powerman.name/doc/asciidoc</a></p>
+</dd>
+<dt class="hdlist1">Live javascript interpreter</dt>
+<dd>
+<p><a href="https://asciidoclive.com/" class="bare">https://asciidoclive.com/</a></p>
+</dd>
+<dt class="hdlist1">This presentation</dt>
+<dd>
+<p><a href="https://github.com/hannesrohde/asciidocdemo" class="bare">https://github.com/hannesrohde/asciidocdemo</a></p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 </div>
-<div id="footnotes">
-<hr>
-<div class="footnote" id="_footnote_1">
-<a href="#_footnoteref_1">1</a>. An example footnote.
-</div>
-<div class="footnote" id="_footnote_2">
-<a href="#_footnoteref_2">2</a>. A second example footnote.
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2017-05-18 13:11:39 MESZ
+Last updated 2017-06-22 17:47:05 MESZ
 </div>
 </div>
 </body>
