@@ -230,6 +230,12 @@ Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
 @enduml
 ....
+
+== Benefits
+- Shared repo for code and docs -> no more outdated documentation
+- Readable source code
+- Good tool support (IntelliJ plugin, github,
+
 == Links
 AsciiDoc Writer’s Guide::
     http://asciidoctor.org/docs/asciidoc-writers-guide/
