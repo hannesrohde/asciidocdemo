@@ -5,7 +5,6 @@ AsciiDoc introduction
 
 A short overview over the capabilities of the AsciiDoc markup language and benefits of using it for software documentation.
 
-:numbered!:
 == Formatting
 
 Text formatting in AsciiDoc works similar to markdown (JIRA, github) or wikitext (wikipedia):
@@ -150,7 +149,7 @@ Relative link:another_document[links to other documents] and links to http://www
 
 Images can be embedded in full size, as thumbnails or inline:
 
-image::images/nyancat.png[]
+image::nyancat.png[]
 
 == Advanced features
 
@@ -234,7 +233,8 @@ Alice <-- Bob: another authentication Response
 
 - Shared repo for code and docs -> no more outdated documentation
 - Readable source code
-- Good tool support (IntelliJ plugin, github, gradle, asciidocfx...)
+- Good tool support (IntelliJ plugin, github, asciidocfx...)
+- Asciidoctor + Gradle = toolchain for Jenkins
 - Export to HTML, docbook, PDF, EPUB
 
 == Links
