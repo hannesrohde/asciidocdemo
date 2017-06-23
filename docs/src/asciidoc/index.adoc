@@ -12,14 +12,13 @@ Text formatting in AsciiDoc works similar to markdown (JIRA, github) or wikitext
 
 === Headers
 
-There are 6 levels of headers:
+There are 5 levels of headers:
 
-= Header level 1
-== Header level 2
-=== Header level 3
-==== Header level 4
-===== Header level 5
-====== Header level 6
+== Header level 1
+=== Header level 2
+==== Header level 3
+===== Header level 4
+====== Header level 5
 
 === Text formatting
 
@@ -151,7 +150,7 @@ Relative link:another_document[links to other documents] and links to http://www
 
 Images can be embedded in full size, as thumbnails or inline:
 
-image::images/nyancat.gif[]
+image::images/nyancat.png[]
 
 == Advanced features
 
@@ -232,9 +231,11 @@ Alice <-- Bob: another authentication Response
 ....
 
 == Benefits
+
 - Shared repo for code and docs -> no more outdated documentation
 - Readable source code
-- Good tool support (IntelliJ plugin, github,
+- Good tool support (IntelliJ plugin, github, gradle, asciidocfx...)
+- Export to HTML, docbook, PDF, EPUB
 
 == Links
 AsciiDoc Writer’s Guide::
@@ -243,5 +244,7 @@ AsciiDoc cheat sheet::
     https://powerman.name/doc/asciidoc
 Live javascript interpreter::
 	https://asciidoclive.com/
+asciidocfx::
+    http://asciidocfx.com
 This presentation::
 	https://github.com/hannesrohde/asciidocdemo

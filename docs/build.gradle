@@ -5,6 +5,7 @@ buildscript {
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
         classpath 'org.asciidoctor:asciidoctorj-diagram:1.5.4'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.15'
     }
 }
 
@@ -19,7 +20,8 @@ asciidoctor.doLast {
 }
 
 asciidoctor {
-    requires = ['asciidoctor-diagram']
+    requires = ['asciidoctor-diagram','asciidoctor-pdf']
+    backends = ['html5','pdf']
     sourceDir = file('src/asciidoc')
     outputDir = file('/')
     attributes \
