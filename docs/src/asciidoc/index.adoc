@@ -149,7 +149,7 @@ Relative link:another_document[links to other documents] and links to http://www
 
 Images can be embedded in full size, as thumbnails or inline:
 
-image::nyancat.png[]
+image::images/nyancat.png[]
 
 == Advanced features
 
